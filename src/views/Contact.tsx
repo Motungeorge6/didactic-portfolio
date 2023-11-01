@@ -2,6 +2,7 @@
 import contactPageImg from "../assets/contact-page.svg";
 import contactIllustration from "../assets/contact-illustration.svg";
 import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { Button, LabelInput, Reveal } from "../components";
 import { motion } from "framer-motion";
 import { fadeIn, scale } from "../utils/variants";
