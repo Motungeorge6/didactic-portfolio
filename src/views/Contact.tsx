@@ -1,34 +1,12 @@
 // assets
 import contactPageImg from "../assets/contact-page.svg";
 import contactIllustration from "../assets/contact-illustration.svg";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { Button, LabelInput, Reveal } from "../components";
 import { motion } from "framer-motion";
 import { fadeIn, scale } from "../utils/variants";
 import { transition } from "../utils/transition";
 
 const Contact = () => {
-  const sendEmail = async (name: string, email: string, message: string) => {
-    try {
-      const response = await fetch("/send-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name, email, message }),
-      });
-
-      if (response.ok) {
-        toast.success("Email sent successfully"); // Success notification
-      } else {
-        toast.error("Failed to send email"); // Error notification
-      }
-    } catch (error) {
-      toast.error("Error: " + (error as Error).message);
-    }
-  };
-
   return (
     <div
       id="contact"
@@ -87,18 +65,7 @@ const Contact = () => {
             />
           </div>
 
-          <Button
-            secondary
-            onClick={() =>
-              sendEmail(
-                "Sample Name",
-                "sample@email.com",
-                "This is a sample message"
-              )
-            }
-          >
-            Send Message
-          </Button>
+          <Button secondary>Send Message</Button>
         </motion.div>
       </div>
 
